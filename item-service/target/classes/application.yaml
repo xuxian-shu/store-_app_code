@@ -2,7 +2,7 @@ server:
   port: 8081
 spring:
   application:
-    name: hm-service # 服务名称
+    name: item-service # 服务名称
   profiles:
     active: dev
   datasource:
