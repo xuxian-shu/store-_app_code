@@ -1,12 +1,12 @@
 server:
-  port: 8084
+  port: 8086
 spring:
   application:
-    name: user-service # 服务名称
+    name: pay-service # 服务名称
   profiles:
     active: dev
   datasource:
-    url: jdbc:mysql://${hm.db.host:localhost}:3306/hm-user?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://${hm.db.host:localhost}:3306/hm-pay?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: ${hm.db.pw}
@@ -30,8 +30,8 @@ logging:
 knife4j:
   enable: true
   openapi:
-    title: 黑马商城用户管理接口文档
-    description: "黑马商城用户管理接口文档"
+    title: 黑马商城支付管理接口文档
+    description: "黑马商城支付管理接口文档"
     email: zhanghuyi@itcast.cn
     concat: 虎哥
     url: https://www.itcast.cn
@@ -41,10 +41,4 @@ knife4j:
         group-name: default
         api-rule: package
         api-rule-resources:
-          - com.hmall.user.controller
-hm:
-  jwt:
-    location: classpath:hmall.jks
-    alias: hmall
-    password: hmall123
-    tokenTTL: 30m
+          - com.hmall.pay.controller
