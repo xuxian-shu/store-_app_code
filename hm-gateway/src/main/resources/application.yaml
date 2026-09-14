@@ -13,11 +13,11 @@ spring:
            predicates:
              - Path=/items/**,/search/**
          - id: user-service
-           uri: lb://user-service+
+           uri: lb://user-service
            predicates:
              - Path=/addresses/**,/users/**
          - id: cart-service
-           uri: lb://cart-service+
+           uri: lb://cart-service
            predicates:
              - Path=/carts/**
       default-filters:

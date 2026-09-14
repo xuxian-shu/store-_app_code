@@ -6,10 +6,10 @@ spring:
   profiles:
     active: dev
   datasource:
-    url: jdbc:mysql://${hm.db.host:localhost}:3306/hm-user?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://192.168.150.101:3306/hm-user?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true&connectTimeout=10000
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    password: ${hm.db.pw}
+    password: 123456
   cloud:
     nacos:
       server-addr: 192.168.150.101:8848

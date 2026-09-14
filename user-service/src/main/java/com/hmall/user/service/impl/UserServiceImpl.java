@@ -50,7 +50,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
             throw new ForbiddenException("用户被冻结");
         }
         // 4.校验密码
-        if (!passwordEncoder.matches(password, user.getPassword())) {
+        String dbPwd = user.getPassword();
+        log.info("登录验证 - 用户输入密码长度: {}, 数据库密码哈希: {}", password.length(), dbPwd);
+        if (!passwordEncoder.matches(password, dbPwd)) {
             throw new BadRequestException("用户名或密码错误");
         }
         // 5.生成TOKEN
